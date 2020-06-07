@@ -1,1 +1,19 @@
-<h1>Hello</h1>
+<h1>Your Burgers</h1>
+<h4>Uneaten</h4>
+<ul>
+  {{#each burgers}}
+  {{#unless eaten}}
+  <li>{{this.name}}<button onclick="eatButton({{id}})">Eat</button></li>
+  {{/unless}}
+  {{/each}}
+</ul>
+<h4>Eaten</h4>
+<ul>
+  {{#each burgers}}
+  {{#if eaten}}
+  <li>{{this.name}}</li>
+  {{/if}}
+  {{/each}}
+</ul>
+<input type='text' id='new' name='new-burger' placeholder="New Burger" / >
+<button onclick='newBurger()'>Add</button>
